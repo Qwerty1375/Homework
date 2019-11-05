@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h> 
+
+void first(char arr[], int lx);
+void last(char arr[], int size, int ux);
+int count(char arr[]);
+
+int main(){
+    char arr[64];
+    char arrtemp[64] = "";
+    int lx,ux,size,c,c2;
+    int step;
+    int f = 0;
+    printf("Enter a string: ");
+    fgets(arr, 64, stdin);
+   // size = count(arr);
+    printf("Enter the first index slice: ");
+    scanf("%d", &lx);
+    printf("Enter the second index slice: ");
+    scanf("%d", &ux);
+    printf("Enter the step: ");
+    scanf("%d", &step);
+    c = lx;
+    int k = 0;
+    for (int i = lx; i < ux; i += step){
+        arrtemp[k] = arr[c];
+        c += step;
+	k++;
+    }
+     while (arrtemp[f] != '\0') {
+      printf("%c", arrtemp[f]);
+      f++;
+   }
+}
+int count(char arr[]){
+int size = sizeof(arr)/sizeof(arr[0]);
+return size;
+}
